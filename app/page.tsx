@@ -3,6 +3,13 @@ import { Activity, Bell, Clock, Server, ArrowRight, Check } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { AnimatedBackground } from "@/components/AnimatedBackground";
+import {
+  ReactElement,
+  JSXElementConstructor,
+  ReactNode,
+  ReactPortal,
+  Key,
+} from "react";
 
 const fadeInUp = {
   initial: { y: 20, opacity: 0 },
@@ -252,12 +259,37 @@ function PricingCard({ title, price, features, featured = false }) {
         <span className="text-sm">/month</span>
       </div>
       <ul className="space-y-3 mb-8">
-        {features.map((feature, index) => (
-          <li key={index} className="flex items-center space-x-2">
-            <Check className="h-5 w-5" />
-            <span>{feature}</span>
-          </li>
-        ))}
+        {features.map(
+          (
+            feature:
+              | string
+              | number
+              | bigint
+              | boolean
+              | ReactElement<unknown, string | JSXElementConstructor<any>>
+              | Iterable<ReactNode>
+              | ReactPortal
+              | Promise<
+                  | string
+                  | number
+                  | bigint
+                  | boolean
+                  | ReactPortal
+                  | ReactElement<unknown, string | JSXElementConstructor<any>>
+                  | Iterable<ReactNode>
+                  | null
+                  | undefined
+                >
+              | null
+              | undefined,
+            index: Key | null | undefined
+          ) => (
+            <li key={index} className="flex items-center space-x-2">
+              <Check className="h-5 w-5" />
+              <span>{feature}</span>
+            </li>
+          )
+        )}
       </ul>
       <button
         className={`w-full py-3 rounded-lg transition ${
