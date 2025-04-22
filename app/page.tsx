@@ -220,7 +220,7 @@ function App() {
     </div>
   );
 }
-//@ts-expect-error
+//@ts-expect-error hotahai
 function FeatureCard({ icon, title, description }) {
   return (
     <motion.div
@@ -234,7 +234,7 @@ function FeatureCard({ icon, title, description }) {
     </motion.div>
   );
 }
-//@ts-expect-error
+//@ts-expect-error hotahai
 function PricingCard({ title, price, features, featured = false }) {
   return (
     <motion.div
