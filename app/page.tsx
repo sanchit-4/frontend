@@ -1,5 +1,4 @@
 "use client";
-import React, { useEffect, useState } from "react";
 import { Activity, Bell, Clock, Server, ArrowRight, Check } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
@@ -221,7 +220,7 @@ function App() {
     </div>
   );
 }
-//@ts-ignore
+//ts-expect-error
 function FeatureCard({ icon, title, description }) {
   return (
     <motion.div
@@ -235,7 +234,7 @@ function FeatureCard({ icon, title, description }) {
     </motion.div>
   );
 }
-//@ts-ignore
+//ts-expect-error
 function PricingCard({ title, price, features, featured = false }) {
   return (
     <motion.div

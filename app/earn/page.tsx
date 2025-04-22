@@ -3,8 +3,6 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Activity, Wallet, Award, History, Globe } from "lucide-react";
 import { AnimatedBackground } from "@/components/AnimatedBackground";
-import { UserButton } from "@clerk/nextjs";
-
 interface MonitoringTask {
   id: string;
   url: string;
